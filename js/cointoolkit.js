@@ -1189,12 +1189,15 @@ $(document).ready(function() {
 		},
 		blockshares: {
 			listUnspent: {
+				"bc.crypto-daio.co.uk": cryptoDaioExplorer.listUnspent('//bc.crypto-daio.co.uk'),
 				"bcblockexplorer.com": bcBasedExplorer.listUnspent('https://bcblockexplorer.com')
 			},
 			broadcast: {
+				"bc.crypto-daio.co.uk": cryptoDaioExplorer.broadcast('//bc.crypto-daio.co.uk'),
 				"bcblockexplorer.com": bcBasedExplorer.broadcast('https://bcblockexplorer.com')
 			},
 			getInputAmount: {
+				"bc.crypto-daio.co.uk": cryptoDaioExplorer.getInputAmount('//bc.crypto-daio.co.uk'),
 				"bcblockexplorer.com": bcBasedExplorer.getInputAmount('https://bcblockexplorer.com')
 			}
 		}
