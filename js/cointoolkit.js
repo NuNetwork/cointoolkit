@@ -588,7 +588,7 @@ $(document).ready(function() {
 					url: endpoint+"/api/v1/address/"+redeem.addr+"/unspent",
 					dataType: "json",
 					error: function(data) {
-						$("#redeemFromStatus").removeClass('hidden').html('<span class="glyphicon glyphicon-exclamation-sign"></span> Unexpected error, unable to retrieve unspent outputs!<br />'+data);
+						$("#redeemFromStatus").removeClass('hidden').html('<span class="glyphicon glyphicon-exclamation-sign"></span> Unexpected error, unable to retrieve unspent outputs!');
 					},
 					success: function(data) {
 						if (coinjs.debug) {console.log(data)};
@@ -601,7 +601,7 @@ $(document).ready(function() {
 								addOutput(o.tx, o.n, script, o.amount);
 							}
 						} else {
-							$("#redeemFromStatus").removeClass('hidden').html('<span class="glyphicon glyphicon-exclamation-sign"></span> Unexpected error, unable to retrieve unspent outputs.<br />'+data);
+							$("#redeemFromStatus").removeClass('hidden').html('<span class="glyphicon glyphicon-exclamation-sign"></span> Unexpected error, unable to retrieve unspent outputs.');
 						}
 					},
 					complete: function(data, status) {
@@ -615,7 +615,7 @@ $(document).ready(function() {
 			return function(txid, index, callback) {
 				$.ajax ({
 					type: "GET",
-					url: "//nu.crypto-test.co.uk/api/v1/tx/"+txid+"/inputs",
+					url: endpoint+"/api/v1/tx/"+txid+"/inputs",
 					dataType: "json",
 					error: function(data) {
 						callback(false);
@@ -637,7 +637,7 @@ $(document).ready(function() {
 				$(thisbtn).html('Please wait, loading... <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>').attr('disabled',true);
 				$.ajax ({
 					type: "POST",
-					url: "//nu.crypto-test.co.uk/api/v1/tx/broadcast",
+					url: endpoint+"/api/v1/tx/broadcast",
 					data: {"hex":$("#rawTransaction").val()},
 					dataType: "json",
 					error: function(data) {
@@ -1141,49 +1141,49 @@ $(document).ready(function() {
 		},
 		nubits: {
 			listUnspent: {
-				"nu.crypto-daio.co.uk": cryptoDaioExplorer.listUnspent('//nu.crypto-test.co.uk'),
+				"nu.crypto-daio.co.uk": cryptoDaioExplorer.listUnspent('//nu.crypto-daio.co.uk'),
 				"nuexplorer.ddns.net": nuBasedExplorer.listUnspent('https://nuexplorer.ddns.net'),
 				"blockexplorer.nu": nuBasedExplorer.listUnspent('https://blockexplorer.nu'),
 			},
 			broadcast: {
-				"nu.crypto-daio.co.uk": cryptoDaioExplorer.broadcast('//nu.crypto-test.co.uk'),
+				"nu.crypto-daio.co.uk": cryptoDaioExplorer.broadcast('//nu.crypto-daio.co.uk'),
 				"nuexplorer.ddns.net": nuBasedExplorer.broadcast('https://nuexplorer.ddns.net'),
 				"blockexplorer.nu": nuBasedExplorer.broadcast('https://blockexplorer.nu')
 			},
 			getInputAmount: {
-				"nu.crypto-daio.co.uk": cryptoDaioExplorer.getInputAmount('//nu.crypto-test.co.uk'),
+				"nu.crypto-daio.co.uk": cryptoDaioExplorer.getInputAmount('//nu.crypto-daio.co.uk'),
 				"nuexplorer.ddns.net": nuBasedExplorer.getInputAmount('https://nuexplorer.ddns.net'),
 				"blockexplorer.nu": nuBasedExplorer.getInputAmount('https://blockexplorer.nu')
 			}
 		},
 		nushares: {
 			listUnspent: {
-				"nu.crypto-daio.co.uk": cryptoDaioExplorer.listUnspent('//nu.crypto-test.co.uk'),
+				"nu.crypto-daio.co.uk": cryptoDaioExplorer.listUnspent('//nu.crypto-daio.co.uk'),
 				"nuexplorer.ddns.net": nuBasedExplorer.listUnspent('https://nuexplorer.ddns.net'),
 				"blockexplorer.nu": nuBasedExplorer.listUnspent('https://blockexplorer.nu')
 			},
 			broadcast: {
-				"nu.crypto-daio.co.uk": cryptoDaioExplorer.broadcast('//nu.crypto-test.co.uk'),
+				"nu.crypto-daio.co.uk": cryptoDaioExplorer.broadcast('//nu.crypto-daio.co.uk'),
 				"nuexplorer.ddns.net": nuBasedExplorer.broadcast('https://nuexplorer.ddns.net'),
 				"blockexplorer.nu": nuBasedExplorer.broadcast('https://blockexplorer.nu')
 			},
 			getInputAmount: {
-				"nu.crypto-daio.co.uk": cryptoDaioExplorer.getInputAmount('//nu.crypto-test.co.uk'),
+				"nu.crypto-daio.co.uk": cryptoDaioExplorer.getInputAmount('//nu.crypto-daio.co.uk'),
 				"nuexplorer.ddns.net": nuBasedExplorer.getInputAmount('https://nuexplorer.ddns.net'),
 				"blockexplorer.nu": nuBasedExplorer.getInputAmount('https://blockexplorer.nu')
 			}
 		},
 		blockcredits: {
 			listUnspent: {
-				"bc.crypto-daio.co.uk": cryptoDaioExplorer.listUnspent('//bc.crypto-test.co.uk'),
+				"bc.crypto-daio.co.uk": cryptoDaioExplorer.listUnspent('//bc.crypto-daio.co.uk'),
 				"bcblockexplorer.com": bcBasedExplorer.listUnspent('https://bcblockexplorer.com')
 			},
 			broadcast: {
-				"bc.crypto-daio.co.uk": cryptoDaioExplorer.broadcast('//bc.crypto-test.co.uk'),
+				"bc.crypto-daio.co.uk": cryptoDaioExplorer.broadcast('//bc.crypto-daio.co.uk'),
 				"bcblockexplorer.com": bcBasedExplorer.broadcast('https://bcblockexplorer.com')
 			},
 			getInputAmount: {
-				"bc.crypto-daio.co.uk": cryptoDaioExplorer.getInputAmount('//bc.crypto-test.co.uk'),
+				"bc.crypto-daio.co.uk": cryptoDaioExplorer.getInputAmount('//bc.crypto-daio.co.uk'),
 				"bcblockexplorer.com": bcBasedExplorer.getInputAmount('https://bcblockexplorer.com')
 			}
 		},
