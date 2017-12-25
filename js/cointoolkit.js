@@ -1139,7 +1139,7 @@ $(document).ready(function() {
 				}
 			}
 		},
-		nubits: {
+		usnubits: {
 			listUnspent: {
 				"nu.crypto-daio.co.uk": cryptoDaioExplorer.listUnspent('//nu.crypto-daio.co.uk'),
 				"nuexplorer.ddns.net": nuBasedExplorer.listUnspent('https://nuexplorer.ddns.net'),

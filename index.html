@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 
@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="css/jquery-ui-sort-only.min.css" media="screen">
 		<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
 		<link rel="stylesheet" href="css/style.css" media="screen">
-		
+
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui-sort-only.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -33,7 +33,7 @@
 
 		<script type="text/javascript" src="js/coin.js"></script>
 		<script type="text/javascript" src="js/cointoolkit.js"></script>
-		
+
 		<script type="text/javascript" src="known-pubkeys.js"></script>
 	</head>
 
@@ -151,7 +151,7 @@
 										<p>Use the form below to open a wallet and begin using this service.</p>
 
 										<div class="alert alert-warning">
-											<b>Notice</b>: Different email address and password combination will open different wallets, be careful when entering your details as lost accounts can not be recovered! 
+											<b>Notice</b>: Different email address and password combination will open different wallets, be careful when entering your details as lost accounts can not be recovered!
 										</div>
 
 										<input id="openEmail" type="email" class="form-control" placeholder="Email address" required autofocus>
@@ -251,11 +251,11 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="tab-pane tab-content" id="newQrCode">
 						<h2>QR Code Generator<small> transfer data easily between devices</small></h2>
 						<p>You can store anything from an address to a entire transaction or a private key</p>
-						
+
 						<div class="row">
 							<div class="col-md-12">
 								<textarea type="text" id="qrCodeText" class="form-control" style="height:125px"></textarea>
@@ -272,7 +272,7 @@
 					<div class="tab-pane tab-content" id="newAddress">
 						<h2>Create new address</h2>
 						<p>Any keys used you will need to manually store safely as they will be needed later to redeem the coins.</p>
-						
+
 						<label><span id="newAddrType"></span> Address </label>
 						<div class="input-group">
 							<input id="newGeneratedAddress" type="text" class="form-control address" value="" readonly>
@@ -295,7 +295,7 @@
 							<label>AES-256 Encrypted WIF key</label>
 							<input id="newPrivKeyEnc" type="text" class="form-control" value="" readonly>
 						</div>
-						
+
 						<label>Private key (hex)</label>
 						<div class="input-group">
 							<input id="newPrivKey" type="password" class="form-control" value="" readonly>
@@ -382,7 +382,7 @@
 											<input type="text" class="form-control pubkey">
 										</td>
 										<td class="col-sm-4">
-											<input type="text" class="form-control id" readonly>	
+											<input type="text" class="form-control id" readonly>
 										</td>
 										<td>
 											<a class="pubkeyAdd"><span class="glyphicon glyphicon-plus"></span></a>
@@ -468,7 +468,7 @@
 
 						<h3>Address Options</h3>
 						<p>You can use the advanced options below to generate different kinds of master addresses.</p>
-						
+
 						<div class="checkbox">
 							<label><input type="checkbox" id="newHDBrainwallet" class="checkbox-inline"> Custom Seed or Brain Wallet</label>
 							<input type="text" class="form-control hidden" id="HDBrainwallet">
@@ -523,7 +523,7 @@
 								<input type="text" class="form-control" value="0" id="nLockTime">
 
 								<hr>
-								
+
 								<div id="txTimeOptional">
 									<label>Extra time field</label>
 									<p>Indicates the timestamp of a transaction.</p>
@@ -681,7 +681,7 @@
 								<div class="col-lg-4">
 								<label>Multi Signature Address</label>
 									<div class="input-group">
-			
+
 										<input type="text" class="form-control address multisigAddress" value="" readonly>
 										<span class="input-group-btn">
 											<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>
@@ -736,7 +736,7 @@
 							</div>
 
 							<hr>
-							
+
 							<div class="row">
 								<div class="col-xs-12">
 									<label>Inputs</label>
@@ -959,7 +959,7 @@
 							<p>The above transaction has been signed:</p>
 
                         				<textarea class="form-control script" style="height:160px" readonly></textarea>
-                                    
+
 							<div class="row">
 								<div class="col-md-12">
 									<p class="text-muted" style="float:left;">Size: <span class="txSize">0</span> <i>bytes</i></p>
@@ -1001,7 +1001,7 @@
 					<div class="tab-pane tab-content" id="dev">
 						<h2>Development <small>Javascript framework, API and more</small></h2>
 						<div class="alert alert-info">This section is currently under development and is subject to change.</div>
-						
+
 					</div>
 
 					<div class="tab-pane tab-content" id="about">
@@ -1027,20 +1027,20 @@
 								<p class="text-muted">Select which network you'd like to use for key pair generation.</p>
 								<select class="form-control" id="coinjs_coin">
 									<!-- pubPrefix, scriptPrefix, privPrefix, hdPubPrefix, hdPrivPrefix, broadcastProvider, unspentProvider, getInputAmountProvider, extraTimeField, extraUnitFieldValue, decimalPlaces, symbol -->
-									<option value="nubits" rel="0x19;0x1a;0x96;0x0488b21e;0x0488ade4;false;false;false;true;0x42;4;NBT;">NuBits</option>
+									<option value="usnubits" rel="0x19;0x1a;0x96;0x0488b21e;0x0488ade4;false;false;false;true;0x42;4;NBT;">US-NuBits</option>
 									<option value="nushares" rel="0x3f;0x40;0x95;0x0488b21e;0x0488ade4;false;false;false;true;0x53;4;NSR;">NuShares</option>
 									<option value="blockcredits" rel="0x1c;0x1e;0x9a;0x0488b21e;0x0488ade4;false;false;false;true;0x43;4;BKC;">BlockCredits</option>
 									<option value="blockshares" rel="0x12;0x14;0x99;0x0488b21e;0x0488ade4;false;false;false;true;0x38;4;BKS;">BlockShares</option>
 									<option value="peercoin" rel="0x37;0x75;0xb7;0x0488b21e;0x0488ade4;false;false;false;true;false;6;PPC;">Peercoin</option>
 									<option value="bitcoin" rel="0x00;0x05;0x80;0x0488b21e;0x0488ade4;false;blockr_io;blockr_io;false;false;8;BTC;">Bitcoin</option>
-									
-									<option value="nubits_testnet" rel="0x55;0x56;0xe0;0x043587cf;0x04358394;false;false;false;true;0x42;4;tNBT;">NuBits (testnet)</option>
+
+									<option value="usnubits_testnet" rel="0x55;0x56;0xe0;0x043587cf;0x04358394;false;false;false;true;0x42;4;tNBT;">US-NuBits (testnet)</option>
 									<option value="nushares_testnet" rel="0x7d;0x7e;0xdf;0x043587cf;0x04358394;false;false;false;true;0x53;4;tNSR;">NuShares (testnet)</option>
 									<option value="blockcredits_testnet" rel="0x57;0x5a;0xe4;0x043587cf;0x04358394;false;false;false;true;0x43;4;tBKC;">BlockCredits (testnet)</option>
 									<option value="blockshares_testnet" rel="0x7f;0x82;0xe3;0x043587cf;0x04358394;false;false;false;true;0x38;4;tBKS;">BlockShares (testnet)</option>
 									<option value="peercoin_testnet" rel="0x6f;0xc4;0xef;0x043587cf;0x04358394;false;false;false;true;false;6;tPPC;">Peercoin (testnet)</option>
 									<option value="bitcoin_testnet" rel="0x6f;0xc4;0xef;0x043587cf;0x04358394;false;blockrio_bitcointestnet;false;false;false;8;tBTC">Bitcoin (testnet)</option>
-									
+
 									<option value="peershares_default" rel="0x3f;0x7d;0xbf;0x0488b21e;0x0488ade4;false;false;false;true;0x53;4;PSR">Peershares default</option>
 									<option value="peershares_default_test" rel="0x20;0xd4;0xa0;0x043587cf;0x04358394;false;false;false;true;0x53;4;tPSR">Peershares default (testnet)</option>
 
@@ -1052,7 +1052,7 @@
 						<div id="settingsCustom" class="hidden">
 							<br>
 							<div class="alert alert-info"> <span class="glyphicon glyphicon-info-sign"></span> You will not be able to automatically broadcast or retreive your unspent outputs automatically when using this setting and will need to use your desktop client instead, however everything else such as creating key pairs, addresses, transaction generation and signing will continue to function normally.</div>
-						
+
 							<hr>
 
 							<div class="row">
@@ -1070,7 +1070,7 @@
 									<b>Script Hash (multisig)</b>: <br>
 									<input type="text" class="form-control coinjssetting" id="coinjs_multisig">
 								</div>
-								
+
 								<div class="col-md-3">
 									<b>HD Pub</b>: <br>
 									<input type="text" class="form-control coinjssetting" id="coinjs_hdpub">
@@ -1090,17 +1090,17 @@
 										<option value="false">false</option>
 									</select>
 								</div>
-								
+
 								<div class="col-md-3">
 									<b>Extra unit field value?</b>: <br>
 									<input type="text" class="form-control coinjssetting boolisvalid" id="coinjs_extraunitfieldvalue">
 								</div>
-								
+
 								<div class="col-md-3">
 									<b>Decimal places</b>: <br>
 									<input type="text" class="form-control" id="coinjs_decimalplaces">
 								</div>
-								
+
 								<div class="col-md-3">
 									<b>Symbol</b>: <br>
 									<input type="text" class="form-control" id="coinjs_symbol">
@@ -1112,7 +1112,7 @@
 						</div>
 
 						<hr>
-						
+
 						<div class="row">
 							<div class="col-md-12">
 								<b>Unspent outputs</b>: <br>
@@ -1122,9 +1122,9 @@
 								</select>
 							</div>
 						</div>
-							
+
 						<hr>
-						
+
 						<div class="row">
 							<div class="col-md-12">
 								<b>Input amount</b>: <br>
@@ -1134,7 +1134,7 @@
 								</select>
 							</div>
 						</div>
-							
+
 						<hr>
 
 						<div class="row">
@@ -1263,12 +1263,12 @@
 
 						<div class="col-md-5">
 							<label>Address:</label> <span class="text-muted">(for disputes)</span>
-							<input id="mediatorEmail" type="text" class="form-control address" value="" readonly>	
+							<input id="mediatorEmail" type="text" class="form-control address" value="" readonly>
 						</div>
 
 						<div class="col-md-2">
-							<label>Fee (%):</label> 
-							<input id="mediatorFee" type="text" class="form-control address" value="" readonly>	
+							<label>Fee (%):</label>
+							<input id="mediatorFee" type="text" class="form-control address" value="" readonly>
 						</div>
 
 					</div>
@@ -1309,7 +1309,7 @@
 		</div>
 	</div>
 	<!-- warning (fee) modal -->
-	
+
 	<!-- multisig modal -->
 	<div class="modal fade wideModal" id="modalMultisig" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog">
@@ -1344,7 +1344,7 @@
 						<div class="col-md-12">
 							<label><abbr title="When signers do not sign sequentially, and they end with multiple versions or forks of the same transaction. This only works if the rest of the transaction is the exactly the same">Combine with the same transaction signed by other pubkeys:</abbr></label>
 							<textarea class="form-control address" value="" style="height: 125px; display: block;"></textarea>
-							
+
 							<div class="alert alert-danger hidden">
 								<span class="glyphicon glyphicon-exclamation-sign"></span> This is not the same transaction. You only can combine the same transaction signed by diferent pubkeys.
 							</div>
@@ -1377,7 +1377,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="asm" style="overflow: auto">
-								
+
 							</div>
 						</div>
 					</div>
