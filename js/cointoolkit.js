@@ -621,10 +621,8 @@ $(document).ready(function() {
 						callback(false);
 					},
 					success: function(data) {
-						console.log(index);
 						if (coinjs.debug) {console.log(data)};
 						if (data.status && data.data && data.status=='success' && data.data.vouts[index]){
-							console.log(data.data.vouts);
 							callback(parseInt(data.data.vouts[index-1].amount*("1e"+coinjs.decimalPlaces), 10));
 						} else {
 							callback(false);
