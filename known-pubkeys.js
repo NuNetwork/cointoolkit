@@ -96,4 +96,6 @@
 	window['known'] = known;
 })();
 
-console.log("Loaded known identities", known);
+if (coinjs.debug) {
+	console.log("Loaded known identities", known);
+}
