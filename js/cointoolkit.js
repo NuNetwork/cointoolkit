@@ -593,7 +593,7 @@ $(document).ready(function() {
 					success: function(data) {
 						if (coinjs.debug) {console.log(data)};
 						if (data.status && data.data && data.status=='success'){
-							$("#redeemFromAddress").removeClass('hidden').html('<span class="glyphicon glyphicon-info-sign"></span> Retrieved unspent inputs from address <a href="//btc.blockr.io/address/info/'+redeem.addr+'" target="_blank">'+redeem.addr+'</a>');
+							$("#redeemFromAddress").removeClass('hidden').html('<span class="glyphicon glyphicon-info-sign"></span> Retrieved unspent inputs from address <a href="'+endpoint+'/address/'+redeem.addr+'" target="_blank">'+redeem.addr+'</a>');
 							for(var i in data.data.unspent){
 								var o = data.data.unspent[i];
 								var script = (redeem.isMultisig==true) ? $("#redeemFrom").val() : o.script;
