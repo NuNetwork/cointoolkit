@@ -187,12 +187,6 @@ $(document).ready(function() {
 					identity = known.pubKey[pubkey].name;
 				}
 
-				console.log(known.addresses);
-				console.log(address);
-				if (known.addresses[address]) {
-					identity = known.addresses[address].name;
-				}
-
 				var address = coinjs.pubkey2address(pubkey);
 				$('<tr><td width="30%"><input type="text" class="form-control" value="'+address+'" readonly></td><td><input type="text" class="form-control" value="'+pubkey+'" readonly></td><td><input type="text" class="form-control" value="'+identity+'" readonly></td></tr>').appendTo("#verifyRsData table tbody");
 			}
@@ -325,9 +319,6 @@ $(document).ready(function() {
 						addr = coinjs.scripthash2address(scriptHash, coinjs.multisig);
 						if (known.scriptHash[scriptHash]) {
 							identity = known.scriptHash[scriptHash].name;
-						}
-						if (known.addresses[addr]) {
-							identity = known.addresses[addr].name;
 						}
 					}
 

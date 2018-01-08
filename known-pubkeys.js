@@ -21,6 +21,8 @@
 			// BpDJpPxgHbEkNmeivsLu4RqBPCaBsjsqCB
 			"e00abb2275d64badd6ba14d7090e6fc647749199": {name: "SMG USNBT"},
 			// 522102b40eac372686090d563c5535b94137d02d986b99c318f5de5140b13f2d12b1e621025644ea515e6fac176efa63fe19e0342b19b3f32f27583e3d0a1bb78c966f28b321033eedb31d02dc810cad13c3c0c51120967e9ae2cfae6fa803f73bd6117f0691f8210312d4ebbf0c5922d21099a92e508787af887beff4a4d1be1deb1dacb0889d5f9254ae
+
+			"17d70e9ea3a7aa0b847b247762aa6397d0ab110a": {name: "Bittrex"}
 		},
 		identities: { // id.pubkey{memberof, [deprecated]}
 			"woolly_sammoth": {
@@ -66,9 +68,6 @@
 					]
 				}
 			}
-		},
-		addresses: {
-			"B6d8nZHTknJrxd68ec6PWsSyfbhHoB9mqu" : {name: "Bittrex"},
 		}
 	};
 
@@ -94,10 +93,6 @@
 	// Mark deprecated. Handling will change in the future. Maybe an alert.
 	for (var hash in known.scriptHash) {
 		known.scriptHash[hash].name = (known.scriptHash[hash].deprecated)? "DEPRECATED " + known.scriptHash[hash].name : known.scriptHash[hash].name;
-	}
-
-	for (var address in known.addresses) {
-		known.addresses[address].name = (known.addresses[address].deprecated)? "DEPRECATED " + known.addresses[address].name : known.addresses[address].name;
 	}
 
 	window['known'] = known;
