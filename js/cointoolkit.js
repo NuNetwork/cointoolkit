@@ -172,6 +172,7 @@ $(document).ready(function() {
 	function decodeRedeemScript(){
 		var script = coinjs.script();
 		var decode = script.decodeRedeemScript($("#verifyScript").val());
+		console.log(decode);
 		if(decode){
 			$("#verifyRsData .multisigAddress").val(decode['address']);
 			$("#verifyRsData .multisigScriptHash").val(decode['scriptHash']);
@@ -184,6 +185,12 @@ $(document).ready(function() {
 				identity = "";
 				if (known.pubKey[pubkey]) {
 					identity = known.pubKey[pubkey].name;
+				}
+
+				console.log(known.addresses);
+				console.log(address);
+				if (known.addresses[address]) {
+					identity = known.addresses[address].name;
 				}
 
 				var address = coinjs.pubkey2address(pubkey);
@@ -318,6 +325,9 @@ $(document).ready(function() {
 						addr = coinjs.scripthash2address(scriptHash, coinjs.multisig);
 						if (known.scriptHash[scriptHash]) {
 							identity = known.scriptHash[scriptHash].name;
+						}
+						if (known.addresses[addr]) {
+							identity = known.addresses[addr].name;
 						}
 					}
 

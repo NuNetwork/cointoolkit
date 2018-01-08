@@ -66,6 +66,9 @@
 					]
 				}
 			}
+		},
+		addresses: {
+			"B6d8nZHTknJrxd68ec6PWsSyfbhHoB9mqu" : {name: "Bittrex"},
 		}
 	};
 
@@ -90,7 +93,11 @@
 
 	// Mark deprecated. Handling will change in the future. Maybe an alert.
 	for (var hash in known.scriptHash) {
-		known.scriptHash[hash].name = (known.scriptHash[hash].deprecated)?"DEPRECATED " + known.scriptHash[hash].name:known.scriptHash[hash].name;
+		known.scriptHash[hash].name = (known.scriptHash[hash].deprecated)? "DEPRECATED " + known.scriptHash[hash].name : known.scriptHash[hash].name;
+	}
+
+	for (var address in known.addresses) {
+		known.addresses[address].name = (known.addresses[address].deprecated)? "DEPRECATED " + known.addresses[address].name : known.addresses[address].name;
 	}
 
 	window['known'] = known;
