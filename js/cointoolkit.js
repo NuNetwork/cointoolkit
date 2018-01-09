@@ -172,7 +172,6 @@ $(document).ready(function() {
 	function decodeRedeemScript(){
 		var script = coinjs.script();
 		var decode = script.decodeRedeemScript($("#verifyScript").val());
-		console.log(decode);
 		if(decode){
 			$("#verifyRsData .multisigAddress").val(decode['address']);
 			$("#verifyRsData .multisigScriptHash").val(decode['scriptHash']);
@@ -314,6 +313,11 @@ $(document).ready(function() {
 								return false;
 							}
 						});
+						if (known.addresses[addr]) {
+							identity = known.addresses[addr].name;
+							// return false;
+							console.log(known.addresses[addr]);
+						}
 					} else {
 						var scriptHash = Crypto.util.bytesToHex(o.script.chunks[1]);
 						addr = coinjs.scripthash2address(scriptHash, coinjs.multisig);
