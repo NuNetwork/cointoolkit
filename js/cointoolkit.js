@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	if(window.location.hostname == "ttutdxh-nubits.github.io" && window.location.protocol != 'https:') {
+	if(window.location.hostname == "nubits.com/cointoolkit" && window.location.protocol != 'https:') {
 		window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
 	}
 
@@ -1161,6 +1161,83 @@ $(document).ready(function() {
 				"blockexplorer.nu": nuBasedExplorer.getInputAmount('https://blockexplorer.nu')
 			}
 		},
+		usnubits_testnet: {
+			listUnspent: {
+				"nu-testnet.crypto-daio.co.uk": cryptoDaioExplorer.listUnspent('//nu-testnet.crypto-daio.co.uk')
+			},
+			broadcast: {
+				"nu-testnet.crypto-daio.co.uk": cryptoDaioExplorer.broadcast('//nu-testnet.crypto-daio.co.uk')
+			},
+			getInputAmount: {
+				"nu-testnet.crypto-daio.co.uk": cryptoDaioExplorer.getInputAmount('//nu-testnet.crypto-daio.co.uk')
+			}
+		},
+		cnnubits: {
+			listUnspent: {
+				"nu.crypto-daio.co.uk": cryptoDaioExplorer.listUnspent('//nu.crypto-daio.co.uk')
+			},
+			broadcast: {
+				"nu.crypto-daio.co.uk": cryptoDaioExplorer.broadcast('//nu.crypto-daio.co.uk')
+			},
+			getInputAmount: {
+				"nu.crypto-daio.co.uk": cryptoDaioExplorer.getInputAmount('//nu.crypto-daio.co.uk')
+			}
+		},
+		cnnubits_testnet: {
+			listUnspent: {
+				"nu-testnet.crypto-daio.co.uk": cryptoDaioExplorer.listUnspent('//nu-testnet.crypto-daio.co.uk')
+			},
+			broadcast: {
+				"nu-testnet.crypto-daio.co.uk": cryptoDaioExplorer.broadcast('//nu-testnet.crypto-daio.co.uk')
+			},
+			getInputAmount: {
+				"nu-testnet.crypto-daio.co.uk": cryptoDaioExplorer.getInputAmount('//nu-testnet.crypto-daio.co.uk')
+			}
+		},
+		eunubits: {
+			listUnspent: {
+				"nu.crypto-daio.co.uk": cryptoDaioExplorer.listUnspent('//nu.crypto-daio.co.uk')
+			},
+			broadcast: {
+				"nu.crypto-daio.co.uk": cryptoDaioExplorer.broadcast('//nu.crypto-daio.co.uk')
+			},
+			getInputAmount: {
+				"nu.crypto-daio.co.uk": cryptoDaioExplorer.getInputAmount('//nu.crypto-daio.co.uk')
+			}
+		},
+		eunubits_testnet: {
+			listUnspent: {
+				"nu-testnet.crypto-daio.co.uk": cryptoDaioExplorer.listUnspent('//nu-testnet.crypto-daio.co.uk')
+			},
+			broadcast: {
+				"nu-testnet.crypto-daio.co.uk": cryptoDaioExplorer.broadcast('//nu-testnet.crypto-daio.co.uk')
+			},
+			getInputAmount: {
+				"nu-testnet.crypto-daio.co.uk": cryptoDaioExplorer.getInputAmount('//nu-testnet.crypto-daio.co.uk')
+			}
+		},
+		xnubits: {
+			listUnspent: {
+				"nu.crypto-daio.co.uk": cryptoDaioExplorer.listUnspent('//nu.crypto-daio.co.uk')
+			},
+			broadcast: {
+				"nu.crypto-daio.co.uk": cryptoDaioExplorer.broadcast('//nu.crypto-daio.co.uk')
+			},
+			getInputAmount: {
+				"nu.crypto-daio.co.uk": cryptoDaioExplorer.getInputAmount('//nu.crypto-daio.co.uk')
+			}
+		},
+		xnubits_testnet: {
+			listUnspent: {
+				"nu-testnet.crypto-daio.co.uk": cryptoDaioExplorer.listUnspent('//nu-testnet.crypto-daio.co.uk')
+			},
+			broadcast: {
+				"nu-testnet.crypto-daio.co.uk": cryptoDaioExplorer.broadcast('//nu-testnet.crypto-daio.co.uk')
+			},
+			getInputAmount: {
+				"nu-testnet.crypto-daio.co.uk": cryptoDaioExplorer.getInputAmount('//nu-testnet.crypto-daio.co.uk')
+			}
+		},
 		nushares: {
 			listUnspent: {
 				"nu.crypto-daio.co.uk": cryptoDaioExplorer.listUnspent('//nu.crypto-daio.co.uk'),
@@ -1176,6 +1253,17 @@ $(document).ready(function() {
 				"nu.crypto-daio.co.uk": cryptoDaioExplorer.getInputAmount('//nu.crypto-daio.co.uk'),
 				"nuexplorer.ddns.net": nuBasedExplorer.getInputAmount('https://nuexplorer.ddns.net'),
 				"blockexplorer.nu": nuBasedExplorer.getInputAmount('https://blockexplorer.nu')
+			}
+		},
+		nushares_testnet: {
+			listUnspent: {
+				"nu-testnet.crypto-daio.co.uk": cryptoDaioExplorer.listUnspent('//nu-testnet.crypto-daio.co.uk')
+			},
+			broadcast: {
+				"nu-testnet.crypto-daio.co.uk": cryptoDaioExplorer.broadcast('//nu-testnet.crypto-daio.co.uk')
+			},
+			getInputAmount: {
+				"nu-testnet.crypto-daio.co.uk": cryptoDaioExplorer.getInputAmount('//nu-testnet.crypto-daio.co.uk')
 			}
 		},
 		blockcredits: {
