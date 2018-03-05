@@ -1180,15 +1180,12 @@ $(document).ready(function() {
 		cnnubits: {
 			listUnspent: {
 				"nu.crypto-daio.co.uk": cryptoDaioExplorer.listUnspent('//nu.crypto-daio.co.uk'),
-				"nu.crypto-test.co.uk": cryptoDaioExplorer.listUnspent('https://nu.crypto-test.co.uk')
 			},
 			broadcast: {
 				"nu.crypto-daio.co.uk": cryptoDaioExplorer.broadcast('//nu.crypto-daio.co.uk'),
-				"nu.crypto-test.co.uk": cryptoDaioExplorer.broadcast('https://nu.crypto-test.co.uk')
 			},
 			getInputAmount: {
 				"nu.crypto-daio.co.uk": cryptoDaioExplorer.getInputAmount('//nu.crypto-daio.co.uk'),
-				"nu.crypto-test.co.uk": cryptoDaioExplorer.getInputAmount('https://nu.crypto-test.co.uk')
 			}
 		},
 		cnnubits_testnet: {
