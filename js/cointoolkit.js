@@ -423,7 +423,6 @@ $(document).ready(function() {
 				var inner_pieces = maybemultisig.toASM().split(" ");
 				for (x = 0; x < inner_pieces.length; x++) {
 					asm += '<span style="display: inline-block;width: 100%;margin-left: 20px;">'+inner_pieces[x];
-					console.log(known.scriptHash[inner_pieces[x]]);
 					if (known.pubKey[inner_pieces[x]]) {
 						asm += '<span style="color: #17AD0E;"> (Match with '+known.pubKey[inner_pieces[x]].name+')</span>';
 					} else if (known.scriptHash[inner_pieces[x]]) {
@@ -620,7 +619,7 @@ $(document).ready(function() {
 			return function(txid, index, callback) {
 				$.ajax ({
 					type: "GET",
-					url: endpoint+"/api/v1/tx/"+txid+"/inputs",
+					url: endpoint+"/api/v1/tx/"+txid+"/outputs",
 					dataType: "json",
 					error: function(data) {
 						callback(false);
@@ -630,6 +629,9 @@ $(document).ready(function() {
 						if (data.status && data.data && data.status=='success' && data.data.vouts[index]){
 							if (coinjs.debug) {console.log("index = " + index)};
 							callback(parseInt(data.data.vouts[index].amount*("1e"+coinjs.decimalPlaces), 10));
+							if (data.data.vouts[index].is_spent == true){
+								alert("Output "+index+" of Transaction "+txid.substr(0, 10)+"... is already spent");
+							}
 						} else {
 							callback(false);
 						}
@@ -644,7 +646,10 @@ $(document).ready(function() {
 				$.ajax ({
 					type: "POST",
 					url: endpoint+"/api/v1/tx/broadcast",
-					data: {"hex":$("#rawTransaction").val()},
+					data: {
+						"hex":$("#rawTransaction").val(),
+						"coin":$("#coinSelector").value(),
+					},
 					dataType: "json",
 					error: function(data) {
 						var r = '';
@@ -657,7 +662,7 @@ $(document).ready(function() {
 						if((data.status && data.data) && data.status=='success'){
 							$("#rawTransactionStatus").addClass('alert-success').removeClass('alert-danger').removeClass("hidden").html(' Txid: '+data.data);
 						} else {
-							$("#rawTransactionStatus").addClass('alert-danger').removeClass('alert-success').removeClass("hidden").html(' There was an error when broadcasting your transaction').prepend('<span class="glyphicon glyphicon-exclamation-sign"></span>');
+							$("#rawTransactionStatus").addClass('alert-danger').removeClass('alert-success').removeClass("hidden").html(' There was an error when broadcasting your transaction '+data.data).prepend('<span class="glyphicon glyphicon-exclamation-sign"></span>');
 						}
 					},
 					complete: function(data, status) {
@@ -922,7 +927,6 @@ $(document).ready(function() {
 					$("#redeemFromStatus").removeClass('hidden').html(msgError);
 					$("#redeemFromBtn").html("Load").attr('disabled',false);
 				} else {
-					console.log(1);
 					for(var i=0;i<data.unspent.length;i++){
 						var script = $("#redeemFrom").val();
 						addOutput(data.unspent[i].txid, data.unspent[i].vout, script, data.unspent[i].value);
@@ -1175,13 +1179,16 @@ $(document).ready(function() {
 		},
 		cnnubits: {
 			listUnspent: {
-				"nu.crypto-daio.co.uk": cryptoDaioExplorer.listUnspent('//nu.crypto-daio.co.uk')
+				"nu.crypto-daio.co.uk": cryptoDaioExplorer.listUnspent('//nu.crypto-daio.co.uk'),
+				"nu.crypto-test.co.uk": cryptoDaioExplorer.listUnspent('https://nu.crypto-test.co.uk')
 			},
 			broadcast: {
-				"nu.crypto-daio.co.uk": cryptoDaioExplorer.broadcast('//nu.crypto-daio.co.uk')
+				"nu.crypto-daio.co.uk": cryptoDaioExplorer.broadcast('//nu.crypto-daio.co.uk'),
+				"nu.crypto-test.co.uk": cryptoDaioExplorer.broadcast('https://nu.crypto-test.co.uk')
 			},
 			getInputAmount: {
-				"nu.crypto-daio.co.uk": cryptoDaioExplorer.getInputAmount('//nu.crypto-daio.co.uk')
+				"nu.crypto-daio.co.uk": cryptoDaioExplorer.getInputAmount('//nu.crypto-daio.co.uk'),
+				"nu.crypto-test.co.uk": cryptoDaioExplorer.getInputAmount('https://nu.crypto-test.co.uk')
 			}
 		},
 		cnnubits_testnet: {
@@ -1350,7 +1357,7 @@ $(document).ready(function() {
 			$("#openLoginStatus").html("Your email address doesn't appear to be valid").removeClass("hidden").fadeOut().fadeIn();
 		}
 
-		$("#openLoginStatus").prepend('<span class="glyphicon glyphicon-exclamation-sign"></span> ');
+		$("#openLoginStatus").prepend('<span class="glyphicon glyphicon-exclamatiocnnbtn-sign"></span> ');
 	});
 
 	$("#walletLogout").click(function(){
@@ -1617,7 +1624,6 @@ $(document).ready(function() {
 		   return (compA < compB) ? -1 : (compA > compB) ? 1 : 0;
 		})
 		$.each(listitems, function(idx, itm) {
-			console.log(itm);
 			mylist.append(itm);
 		});
 		$("#multiSigData").addClass("hidden");
