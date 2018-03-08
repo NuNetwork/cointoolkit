@@ -206,6 +206,15 @@ $(document).ready(function() {
 			$("#verifyTransactionData .transactionSize").html(decode.size()+' <i>bytes</i>');
 			$("#verifyTransactionData .transactionLockTime").html((decode['lock_time'] >= 500000000)?new Date(decode['nTime']*1000).toUTCString():"Block height "+decode['lock_time']);
 			$("#verifyTransactionData .transactionUnit").html(String.fromCharCode(decode['nUnit']));
+
+			$("#coinSelector > option").each(function() {
+				var o = $(this).attr("rel").split(";");
+				if (parseInt(o[9],16) === decode['nUnit']) {
+					console.log('oh yes');
+					$("#coinSelector").val($(this));
+				}
+			});
+
 			$("#verifyTransactionData .verifyToSign").on( "click", function() {
 				$("#signTransaction").val(decode.serialize()).fadeOut().fadeIn();
 				window.location.hash = "#sign";
