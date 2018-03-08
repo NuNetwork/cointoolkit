@@ -650,14 +650,14 @@ $(document).ready(function() {
 		},
 		broadcast: function(endpoint) {
 			return function(thisbtn){
+				alert("sending "+$("#rawTransaction").val());
 				var orig_html = $(thisbtn).html();
 				$(thisbtn).html('Please wait, loading... <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>').attr('disabled',true);
 				$.ajax ({
 					type: "POST",
 					url: endpoint+"/api/v1/tx/broadcast",
 					data: {
-						"hex":$("#rawTransaction").val(),
-						"coin":$("#coinSelector").value(),
+						"hex": $("#rawTransaction").val()
 					},
 					dataType: "json",
 					error: function(data) {
