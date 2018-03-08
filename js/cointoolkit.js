@@ -210,7 +210,6 @@ $(document).ready(function() {
 			$("#coinSelector > option").each(function() {
 				var o = $(this).attr("rel").split(";");
 				if (parseInt(o[9],16) === decode['nUnit']) {
-					console.log('oh yes');
 					$("#coinSelector").val($(this));
 				}
 			});
