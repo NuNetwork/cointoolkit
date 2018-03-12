@@ -662,7 +662,7 @@ $(document).ready(function() {
 						if((data.status && data.data) && data.status=='success'){
 							$("#rawTransactionStatus").addClass('alert-success').removeClass('alert-danger').removeClass("hidden").html(' Txid: '+data.data);
 						} else {
-							$("#rawTransactionStatus").addClass('alert-danger').removeClass('alert-success').removeClass("hidden").html(' There was an error when broadcasting your transaction: "'+data.data@'"').prepend('<span class="glyphicon glyphicon-exclamation-sign"></span>');
+							$("#rawTransactionStatus").addClass('alert-danger').removeClass('alert-success').removeClass("hidden").html(' There was an error when broadcasting your transaction: "'+data.data+'"').prepend('<span class="glyphicon glyphicon-exclamation-sign"></span>');
 						}
 					},
 					complete: function(data, status) {
